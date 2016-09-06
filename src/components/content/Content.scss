@@ -1,0 +1,27 @@
+.content {
+    background-color: #222;
+    flex: 1 0 auto;
+    font-size: 40px;
+    color: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    span {
+        max-width: 50%;
+    }
+    img {
+        height: auto;
+    }
+    input {
+        padding: 10px;
+        background-color: #2f2f2f;
+        border: none;
+        font-size: 24px;
+        color: #535353;
+        text-align: center;
+        &:focus {
+            outline-color: #1e1e1e;
+        }
+    }
+}
