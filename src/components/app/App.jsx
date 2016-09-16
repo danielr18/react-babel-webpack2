@@ -9,11 +9,14 @@ import Footer from '../footer/Footer.jsx';
 // Styles
 import './App.scss';
 
-const App = () =>
-  <div className="site-wrapper">
-    <Header />
-    <Content />
-    <Footer />
-  </div>;
+function App() {
+  return (
+    <div className="site-wrapper">
+      <Header />
+      <Content />
+      <Footer />
+    </div>
+  );
+}
 
 export default App;

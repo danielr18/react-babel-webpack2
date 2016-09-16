@@ -8,24 +8,14 @@ const defaultEnv = {
     production: false,
 };
 
-const baseEntries = [
-    './src/index.jsx' // App's entry point
-];
-
-const devEntries = [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8080', // webpack dev server host and port
-    'webpack/hot/dev-server' // Enables Hot Module Replacement
-];
-
-const productionEntries = [
-    // None at the moment
-];
-
 export default (env = defaultEnv) => ({
     entry: [
-        ...env.dev ? devEntries : productionEntries,
-        ...baseEntries
+        ...env.dev ? [
+            'react-hot-loader/patch',
+            'webpack-dev-server/client?http://localhost:8080', // webpack dev server host and port
+            'webpack/hot/dev-server' // Enables Hot Module Replacement
+        ] : [],
+        './src/index.jsx'
     ],
     output: {
         path: path.join(__dirname, 'dist'),
