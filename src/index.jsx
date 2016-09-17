@@ -1,25 +1,11 @@
+// Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 
+// Components
 import App from './components/app/App.jsx';
 
+// Styles
 import './index.scss';
 
-ReactDOM.render(
-  <AppContainer>
-    <App />
-  </AppContainer>,
-  document.getElementById('main')
-);
-
-if (module.hot) {
-  module.hot.accept('./components/app/App.jsx', () => {
-    ReactDOM.render(
-      <AppContainer>
-        <App />
-      </AppContainer>,
-      document.getElementById('main')
-    );
-  });
-}
+ReactDOM.render(<App />, document.getElementById('main'));
