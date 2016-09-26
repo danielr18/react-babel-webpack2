@@ -36,6 +36,16 @@ export default (env = defaultEnv) => ({
       {
         test: /.jsx?$/,
         exclude: /node_modules/,
+        enforce: 'pre',
+        use: [
+          {
+            loader: 'eslint',
+          }
+        ]
+      },
+      {
+        test: /.jsx?$/,
+        exclude: /node_modules/,
         include: path.join(__dirname, 'src'),
         use: [
           {
