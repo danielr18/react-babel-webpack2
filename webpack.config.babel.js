@@ -46,6 +46,7 @@ export default (env = defaultEnv) => ({
                 ['es2015', { modules: false }],
                 'react',
               ],
+              plugins: ['react-hot-loader/babel']
             }
           }
         ]
