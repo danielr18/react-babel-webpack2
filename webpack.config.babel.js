@@ -13,7 +13,6 @@ export default (env = defaultEnv) => ({
     ...env.dev ? [
       'react-hot-loader/patch',
       'webpack-dev-server/client?http://localhost:8080',
-      'webpack/hot/dev-server',
     ] : [],
     path.join(__dirname, 'src/index.jsx'),
   ],
@@ -33,19 +32,23 @@ export default (env = defaultEnv) => ({
     }),
   ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /.jsx?$/,
-        loader: 'babel',
         exclude: /node_modules/,
         include: path.join(__dirname, 'src'),
-        query: {
-          babelrc: false,
-          presets: [
-            ['es2015', { modules: false }],
-            'react',
-          ],
-        }
+        use: [
+          {
+            loader: 'babel',
+            options: {
+              babelrc: false,
+              presets: [
+                ['es2015', { modules: false }],
+                'react',
+              ],
+            }
+          }
+        ]
       },
       {
         test: /\.(css|scss|sass)$/,

@@ -24,10 +24,11 @@
     "css-loader": "^0.24.0",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "html-webpack-plugin": "^2.22.0",
+    "loader-utils": "^0.2.16",
     "node-sass": "^3.9.0",
     "sass-loader": "^4.0.1",
     "style-loader": "^0.13.1",
-    "webpack": "^2.1.0-beta.21",
+    "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.2"
   }
 }
