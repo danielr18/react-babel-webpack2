@@ -39,7 +39,7 @@ export default (env = defaultEnv) => ({
         enforce: 'pre',
         use: [
           {
-            loader: 'eslint',
+            loader: 'eslint-loader',
           }
         ]
       },
@@ -49,7 +49,7 @@ export default (env = defaultEnv) => ({
         include: path.join(__dirname, 'src'),
         use: [
           {
-            loader: 'babel',
+            loader: 'babel-loader',
             options: {
               babelrc: false,
               presets: [
@@ -63,8 +63,8 @@ export default (env = defaultEnv) => ({
       },
       {
         test: /\.(css|scss|sass)$/,
-        loader: env.dev ? 'style!css!sass' : ExtractTextPlugin.extract({
-          fallbackLoader: 'style',
+        loader: env.dev ? 'style-loader!css-loader!sass-loader' : ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
           loader: 'css!sass'
         })
       },
