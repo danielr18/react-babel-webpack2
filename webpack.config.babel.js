@@ -65,7 +65,7 @@ export default (env = defaultEnv) => ({
         test: /\.(css|scss|sass)$/,
         loader: env.dev ? 'style-loader!css-loader!sass-loader' : ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css!sass'
+          loader: 'css-loader!sass-loader'
         })
       },
     ]
